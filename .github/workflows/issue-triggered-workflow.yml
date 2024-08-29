@@ -12,4 +12,3 @@ jobs:
         if: contains(github.event.issue.title, 'deploy')
         run: |
           echo "User name is ${{ github.actor }}"
-          cat "${{ toJson(github.event.issue) }}"
