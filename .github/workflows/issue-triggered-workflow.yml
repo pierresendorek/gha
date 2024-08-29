@@ -14,8 +14,13 @@ jobs:
           echo "User name is ${{ github.actor }}"
           echo "Issue title is ${{ github.event.issue.title }}"
           echo "Issue body is ${{ github.event.issue.body }}"
-          echo "$G_CONTEXT"
-          env:
-            G_CONTEXT: ${{ toJson(github) }}
+          echo "$GITHUB_CONTEXT"
+        env:
+            GITHUB_CONTEXT: ${{ toJson(github) }}
+
+      - name: View the github context
+        run: echo "$GITHUB_CONTEXT"
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
           
         
