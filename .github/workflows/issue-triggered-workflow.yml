@@ -14,4 +14,8 @@ jobs:
           echo "User name is ${{ github.actor }}"
           echo "Issue title is ${{ github.event.issue.title }}"
           echo "Issue body is ${{ github.event.issue.body }}"
-          echo "Issue is ${{ toJson(github.event.issue.fields) }}"
+          echo "event_json=${{ toJson(github.event) }}" >> $GITHUB_OUTPUT
+        
+      - name: Show event
+        run: |
+          echo "${{ steps.echo-event.outputs.event_json }}"
