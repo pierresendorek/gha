@@ -27,7 +27,7 @@ jobs:
       - name: Block always ran
         run: | 
           echo "All labels for this issue:"
-          for label in "${{ toJson(github.event.issue.labels) }}"; do
+          for label in "${{ toJson(github.event.issue.title) }}"; do
             echo "- $label"
           done
-          echo "${{ toJson(github.event.issue.labels) }}"
+          echo "${{ toJson(github.event.issue.title) }}"
