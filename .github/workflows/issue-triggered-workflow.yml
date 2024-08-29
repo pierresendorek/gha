@@ -27,4 +27,4 @@ jobs:
       - name: Block always ran
         run: | 
           echo "This always runs."
-          echo "Issue Body: ${{ github.event.issue.labels.* }}"
+          echo "Issue Body: ${{ github.event.issue.labels[0].name }}"
