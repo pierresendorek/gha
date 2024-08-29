@@ -26,5 +26,7 @@ jobs:
 
       - name: Block always ran
         run: | 
-          echo "This always runs."
-          echo "Issue Body: ${{ github.event.issue.labels[0].name }}"
+          echo "All labels for this issue:"
+          for label in "${{ toJson(github.event.issue.labels) }}"; do
+            echo "- $label"
+          done
