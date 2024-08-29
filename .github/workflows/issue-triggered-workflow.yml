@@ -30,3 +30,4 @@ jobs:
           for label in "${{ toJson(github.event.issue.labels) }}"; do
             echo "- $label"
           done
+          echo "${{ toJson(github.event.issue.labels) }}"
