@@ -1,0 +1,25 @@
+name: Issue Triggered Workflow
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  handle_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for Bug Label
+        if: contains(github.event.issue.labels.*.name, 'bug')
+        run: |
+          echo "This is a bug issue. Running bug-specific actions."
+          echo "Issue Title: ${{ github.event.issue.title }}"
+          echo "Issue Body: ${{ github.event.issue.labels }}"
+
+      - name: Check for Feature Label
+        if: contains(github.event.issue.labels.*.name, 'feature')
+        run: 
+          echo "This is a feature request. Running feature-specific actions."
+
+      - name: Check for Question Label
+        if: contains(github.event.issue.labels.*.name, 'question')
+        run: echo "This is a question. Running question-specific actions."
