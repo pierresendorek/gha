@@ -9,25 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check for Bug Label
-        if: contains(github.event.issue.labels.*.name, 'bug')
+        if: contains(github.event.issue.title, 'deploy')
         run: |
-          echo "This is a bug issue. Running bug-specific actions."
-          echo "Issue Title: ${{ github.event.issue.title }}"
-          echo "Issue Body: ${{ github.event.issue.labels }}"
-        
-      - name: Check for Feature Label
-        if: contains(github.event.issue.labels.*.name, 'feature')
-        run: 
-          echo "This is a feature request. Running feature-specific actions."
-
-      - name: Check for Question Label
-        if: contains(github.event.issue.labels.*.name, 'question')
-        run: echo "This is a question. Running question-specific actions."
-
-      - name: Block always ran
-        run: | 
-          echo "All labels for this issue:"
-          for label in "${{ toJson(github.event.issue.title) }}"; do
-            echo "- $label"
-          done
-          echo "${{ toJson(github.event.issue.title) }}"
+          echo "User name is ${{ github.actor }}"
