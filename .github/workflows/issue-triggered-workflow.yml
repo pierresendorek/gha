@@ -13,4 +13,4 @@ jobs:
           echo "User name is ${{ github.actor }}"
           echo "Issue title is ${{ github.event.issue.title }}"
           echo "Issue body is ${{ github.event.issue.body }}"
-          echo "Field is ${{ github.event.issue.fields.what-happened }}"
+          echo "Issue is ${{ toJson(github.event.issue) }}"
