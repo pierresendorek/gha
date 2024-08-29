@@ -16,6 +16,6 @@ jobs:
           echo "Issue body is ${{ github.event.issue.body }}"
           echo "$G_CONTEXT"
           env:
-            G_CONTEXT: ${{ toJson(github.event.issue) }}
+            G_CONTEXT: ${{ toJson(github) }}
           
         
