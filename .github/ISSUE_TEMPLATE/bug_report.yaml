@@ -1,6 +1,6 @@
-name: Bug Report
+name: deploy
 description: File a bug report.
-title: "[Bug]: "
+title: "deploy: "
 labels: ["bug", "triage"]
 projects: ["octo-org/1", "octo-org/44"]
 assignees:
