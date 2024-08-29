@@ -12,3 +12,5 @@ jobs:
         if: contains(github.event.issue.title, 'deploy')
         run: |
           echo "User name is ${{ github.actor }}"
+          echo "Issue title is ${{ github.event.issue.title }}"
+          echo "Issue body is ${{ github.event.issue.body }}"
