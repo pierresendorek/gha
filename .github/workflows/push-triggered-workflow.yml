@@ -9,5 +9,5 @@ jobs:
         run: |
           echo "Running tests"
 
-  call-sub-worflow:
-    uses: pierresendorek/gha/.github/workflows/triggered.yml@fix_broken_workflows
+  call-sub-workflow:
+    uses: pierresendorek/gha/.github/workflows/subfolder/triggered.yml@fix_broken_workflows
