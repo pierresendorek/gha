@@ -10,4 +10,4 @@ jobs:
           echo "Running tests"
 
   call-sub-workflow:
-    uses: pierresendorek/gha/.github/workflows/subfolder/triggered.yml@fix_broken_workflows
+    uses: pierresendorek/gha/.github/triggered.yml@fix_broken_workflows
