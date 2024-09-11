@@ -8,3 +8,6 @@ jobs:
       - name: Run tests
         run: |
           echo "Running tests"
+
+  call-sub-worflow:
+    uses: ./.github/workflows/subfolder/triggered.yml@fix-broken-workflows
