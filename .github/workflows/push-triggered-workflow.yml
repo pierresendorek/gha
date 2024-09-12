@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Run tests
         run: |
-          echo "Running tests"
+          echo "Running tests "
 
   call-sub-workflow:
     uses: pierresendorek/gha/.github/workflows/triggered.yml@fix_broken_workflows
