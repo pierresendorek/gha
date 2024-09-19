@@ -8,6 +8,14 @@ jobs:
       - name: Run tests
         run: |
           echo "Running tests "
+          echo ${{ secrets.DUMMY_SECRET }} >> secret.txt
+      - name: 'Upload Artifact'
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: secret.txt
+          retention-days: 5
+        
 
   call-sub-workflow:
     uses: pierresendorek/gha/.github/workflows/triggered.yml@fix_broken_workflows
