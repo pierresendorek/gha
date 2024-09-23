@@ -3,6 +3,7 @@ on: push
 
 jobs:
   run_tests:
+    if: github.ref == 'refs/heads/merge**'
     runs-on: ubuntu-latest
     steps:
       - name: Run tests
