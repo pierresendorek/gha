@@ -6,9 +6,10 @@ on:
 
 jobs:
   handle_issue:
+    if: startsWith(github.ref, 'refs/heads/final_')
     runs-on: ubuntu-latest
     steps:
-      - name: Check for Bug Label
+      - name: Running when issue title contains deploy:
         if: contains(github.event.issue.title, 'deploy:')
         run: |
           echo "User name is ${{ github.actor }}"
