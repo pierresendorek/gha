@@ -3,7 +3,7 @@ on: push
 
 jobs:
   run_tests:
-    if: github.ref == 'refs/heads/final_**'
+    if: startsWith(github.ref, 'refs/heads/final_')
     runs-on: ubuntu-latest
     steps:
       - name: Run tests
@@ -20,5 +20,5 @@ jobs:
         
 
   call-sub-workflow:
-    if: github.ref == 'refs/heads/final_**'
+    if: startsWith(github.ref, 'refs/heads/final_')
     uses: pierresendorek/gha/.github/workflows/triggered.yml@fix_broken_workflows
